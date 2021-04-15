@@ -1,0 +1,30 @@
+.counterwrapper{
+  background-color: #a23b3b;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mainwindow{
+    border: 1px solid;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;;
+    align-items: center;
+    .count{
+      width: 80%;
+      border: 1px solid;
+      background-color: aqua;
+      height: 80px;
+
+    }
+.controls{
+  @extend .count
+}
+
+
+  }
+}

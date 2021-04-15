@@ -16,7 +16,7 @@ const initialStste: CounterStateType = {
 }
 
 export const incValue = (data: number) => ({type: 'inc-Value', data} as const)
-export const setValues = (maxVal: number, startVal: number) => ({type: 'set-Values', maxVal, startVal} as const)
+export const setValues = (maxVal: number, startVal: number, value:number) => ({type: 'set-Values', maxVal, startVal,value} as const)
 export const disButtonInc = (whatdisable: any) => ({type: 'disable-button', whatdisable} as const)
 export const resValues = () => ({type: 'res-value'} as const)
 
@@ -28,19 +28,18 @@ type ActionType = ReturnType<typeof incValue> |
 
 
 export const countreducer = (state: CounterStateType = initialStste, action: ActionType): CounterStateType => {
-
     switch (action.type) {
         case 'inc-Value':
-            return {...state, value: state.startValue + action.data}
+                return {...state, value: state.value + action.data}
         case "set-Values": {
-            return {...state, maxValue: action.maxVal, startValue: action.startVal}
+            return {...state, maxValue: action.maxVal, startValue: action.startVal,value:action.value}
         }
         case "disable-button": {
             const dis = action.whatdisable
             return {...state,...dis}
         }
         case "res-value" :
-            return {...state,startValue: 0,maxValue:0,value:0}
+            return {...state,value:0}
         default:
             return state
     }

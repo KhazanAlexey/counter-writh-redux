@@ -21,8 +21,16 @@
       height: 80px;
 
     }
+    .counterr{
+      @extend .count;
+      color:red;
+    }
 .controls{
-  @extend .count
+  @extend .count;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-around;
 }
 
 

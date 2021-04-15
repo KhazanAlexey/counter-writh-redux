@@ -1,20 +1,38 @@
-import React from "react";
-import {useSelector} from "react-redux";
-import {AppRootStateType} from "../../store/reducers/store";
-import style from "../../Components/Counter/Counter.module.scss";
+import React, { Component } from 'react'
 
-
-type propsType = {
+import style from "../button/Button.module.scss"
+import {WrappedFieldProps} from "redux-form";
+interface propsType  {
     name: string
     disabledStatus: boolean
+    onClick?: ()=>void
 }
 
 
-export const Button = React.memo(function (props: propsType) {
 
-    return <div>
-        <button disabled={props.disabledStatus}>{props.name}</button>
+export const Button = React.memo(function (props: propsType) {
+    return <div className={style.buttonWrapper}>
+        <button  disabled={props.disabledStatus} onClick={props.onClick}>{props.name}</button>
     </div>
 
 })
 
+
+
+//
+// export class MyCustomButton extends Component {
+//     render() {
+//         const {  name,
+//             disabledStatus} = this.props
+//         return (
+//             <div>
+//
+//
+//                 <button disabled={props.disabledStatus} >{props.name}</button>
+//
+//
+//
+//             </div>
+//         )
+//     }
+// }

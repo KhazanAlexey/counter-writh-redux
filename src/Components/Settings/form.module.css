@@ -1,0 +1,22 @@
+
+.form .error input,
+.form .error textarea
+
+{
+    border: 2px solid #005eff;
+}
+.form span{
+    color: #002aff;
+}
+.formsummaryerror {
+    border: #0037ff 1px solid;
+    padding: 5px;
+    color:  #002aff ;
+}
+
+.buttonWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

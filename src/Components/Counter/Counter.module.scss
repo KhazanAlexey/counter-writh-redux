@@ -1,37 +1,61 @@
-.counterwrapper{
+.counterwrapper {
   background-color: #a23b3b;
   width: 50%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding:50px;
 
-  .mainwindow{
+  .mainwindow {
     border: 1px solid;
     width: 400px;
     height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;;
+    justify-content: space-between;
     align-items: center;
-    .count{
+    .error{
+      @extend p;
+      color: #91ba2e;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .count {
       width: 80%;
-      border: 1px solid;
-      background-color: aqua;
       height: 80px;
 
+
+      & p {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+
     }
-    .counterr{
+
+    .counterr {
       @extend .count;
-      color:red;
+      color: red;
+
+      & p {
+        @extend p
+      }
     }
-.controls{
-  @extend .count;
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  justify-content: space-around;
-}
+
+    .controls {
+      @extend .count;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
 
 
   }

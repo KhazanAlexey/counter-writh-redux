@@ -10,7 +10,7 @@ type CounterStateType = {
     disableSet: boolean
     value: number
     maxValue: number
-    error: string
+    error: string|null
 }
 const initialStste: CounterStateType = {
     startValue: 0,
@@ -31,7 +31,7 @@ export const setValuesAC = (maxVal: number, startVal: number, value: number) => 
 } as const)
 export const disButton = (whatdisable: any) => ({type: 'disable-button', whatdisable} as const)
 export const resValues = () => ({type: 'res-value'} as const)
-export const setError = (error: string) => ({type: 'set-error', error} as const)
+export const setError = (error: string|null) => ({type: 'set-error', error} as const)
 // const dispatch=useDispatch()
 
 // // export function stopSubmit(form: string, errors?: Object): Action;
